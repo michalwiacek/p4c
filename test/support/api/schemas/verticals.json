@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/api/v1/vertiacals.schema.json",
+  "title": "Vertical",
+  "description": "A structure of Categories",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "properties": {
+            "id": {
+              "description": "The unique identifier for a vertical",
+              "type": "integer"
+            },
+            "type": {
+              "description": "The type of object",
+              "type": "string"
+            },
+            "attributes": {
+              "description": "Actual data of object",
+              "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }            
+          }
+          }
+        }
+        }
+      },
+      "status": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+}
