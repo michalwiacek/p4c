@@ -12,15 +12,15 @@ class Api::V1::VerticalsController < Api::V1::ApplicationController
   end
 
   def create
-    render_response(status: :ok, obj: VerticalSerializer.new(vertical)) if Vertical.save!
+    render_response(status: :ok, obj: VerticalSerializer.new(vertical)) if vertical.save!
   end
 
   def update
-    render_response(status: :ok, obj: VerticalSerializer.new(vertical)) if Vertical.update!(vertical_params)
+    render_response(status: :ok, obj: VerticalSerializer.new(vertical)) if vertical.update!(vertical_params)
   end
 
   def destroy
-    if Vertical.destroy
+    if vertical.destroy
       render_response(status: :ok)
     else
       render_response(status: :unprocessable_entity)

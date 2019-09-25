@@ -11,15 +11,15 @@ class Api::V1::CategoriesController < Api::V1::ApplicationController
   end
 
   def create
-    render_response(status: :ok, obj: CategorySerializer.new(category)) if Category.save!
+    render_response(status: :ok, obj: CategorySerializer.new(category)) if category.save!
   end
 
   def update
-    render_response(status: :ok, obj: CategorySerializer.new(category)) if Category.update!(category_params)
+    render_response(status: :ok, obj: CategorySerializer.new(category)) if category.update!(category_params)
   end
 
   def destroy
-    if Category.destroy
+    if category.destroy
       render_response(status: :ok)
     else
       render_response(status: :unprocessable_entity)

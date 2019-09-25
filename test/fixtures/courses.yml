@@ -4,8 +4,10 @@ one:
   state: MyString
   name: MyString
   category: one
+  author: one 
 
 two:
   state: MyString
   name: MyString
   category: two
+  author: two

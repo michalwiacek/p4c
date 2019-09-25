@@ -11,15 +11,15 @@ class Api::V1::CoursesController < Api::V1::ApplicationController
   end
 
   def create
-    render_response(status: :ok, obj: CourseSerializer.new(course)) if Course.save!
+    render_response(status: :ok, obj: CourseSerializer.new(course)) if course.save!
   end
 
   def update
-    render_response(status: :ok, obj: CourseSerializer.new(course)) if Course.update!(course_params)
+    render_response(status: :ok, obj: CourseSerializer.new(course)) if course.update!(course_params)
   end
 
   def destroy
-    if Course.destroy
+    if course.destroy
       render_response(status: :ok)
     else
       render_response(status: :unprocessable_entity)
